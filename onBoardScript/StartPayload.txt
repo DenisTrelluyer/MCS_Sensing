@@ -1,0 +1,2 @@
+csp txrx 4 14 1000 000F010000
+script delay 48000

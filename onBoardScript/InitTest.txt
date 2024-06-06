@@ -1,0 +1,4 @@
+repeat 'csp ping 4' -s -d 500 
+repeat 'csp uptime 4' -s -d 500
+csp txrx 4 14 1000 0005010000
+delay 105000

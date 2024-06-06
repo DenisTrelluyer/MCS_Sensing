@@ -1,0 +1,2 @@
+repeat 'csp ping 4' -s -d 500 
+repeat 'csp uptime 4' -s -d 500
