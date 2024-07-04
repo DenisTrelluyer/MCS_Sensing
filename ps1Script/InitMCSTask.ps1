@@ -31,12 +31,12 @@ TS-NewFileUploadTask -Sat testsat -CommType sband  -Subsystem 3 -File 10 -FilePa
 
 
 # Restore link on PC
-TS-NewNanoMcsTask -Sat testsat -CommType sband -ScriptFile onBoardScript/RestoreLink.txt | TS-AddTask -Name RestorePClinks -Priority 10 -DurationRelative 0.1 -Repeat
+TS-NewNanoMcsTask -Sat testsat -CommType sband -ScriptFile onBoardScript/RestoreLink.txt | TS-AddTask -Name RestorePClinks -Priority 99 -DurationRelative 0.05 -Repeat
 #Upload firmware
-TS-NewFileUploadTask -Sat testsat -CommType sband  -Subsystem 5 -File 12 -FilePath firmware/image.bin | TS-AddTask -Name UploadFirmware -Priority 100 -DurationRelative 0.9 -Repeat
+TS-NewFileUploadTask -Sat testsat -CommType sband  -Subsystem 5 -File 17 -FilePath firmware/image.bin | TS-AddTask -Name UploadFirmware -Priority 98 -DurationRelative 0.9 -Repeat
 # Get file information on Upload
 TS-NewNanoMcsTask -Sat testsat -CommType sband -ScriptFile onBoardScript/GetUploadInfo.txt | TS-AddTask -Name GetUploadInfo -Priority 10 -DurationRelative 0.1 -Repeat
 
 
 #download Image telemetry
-TS-NewFileDownloadTask -Sat testsat -CommType xband -Subsystem 5 -File  10 | TS-AddTask -Name PC_download_Image -Priority 20 -DurationRelative 0.1 -Repeat
+TS-NewFileDownloadTask -Sat testsat -CommType xband -Subsystem 5 -File  25 | TS-AddTask -Name PC_download_Image -Priority 20 -DurationRelative 1 -Repeat
